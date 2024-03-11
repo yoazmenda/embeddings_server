@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Flask App</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+
+        .table-responsive {
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello, Flask!</h1>
-    <p>This is a simple Flask app.</p>
+    <div class="container">
+        <h1 class="text-center">Tweets Classification</h1>
+        <p class="text-center">This app will showcase tweets classification using different embeddings algorithms.</p>
+        <p>Here is a sneak peak of the tweets dataset:</p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>Topic</th>
+                        <th>Tweet</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>307000000000000000</td>
+                        <td>Sports</td>
+                        <td>99 days to go until the start of #ct13. Did you know...</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>306000000000000000</td>
+                        <td>Sports</td>
+                        <td>"Tonight's Scottish First Division match between...</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>292000000000000000</td>
+                        <td>Sports</td>
+                        <td>10 off the over, 10 required! Captain Faulkner leads...</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>304000000000000000</td>
+                        <td>Politics</td>
+                        <td>.@GSANetwork raises awareness &amp; stands up against...</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>305000000000000000</td>
+                        <td>Sports</td>
+                        <td>"Another wonderful start from England's new-ball...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center footer-link">
+            <a href="{{ url_for('static', filename='html/bag_of_words.html') }}" class="btn btn-primary">Bag of
+                Words</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
+
 </html>
