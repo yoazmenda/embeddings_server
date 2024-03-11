@@ -3,4 +3,5 @@
 /.idea
 /research/.ipynb_checkpoints/
 /research/venv
+/research/.ipynb_checkpoints
 /app/venv
